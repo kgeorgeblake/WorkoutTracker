@@ -7,7 +7,7 @@ const dbConfig = process.env.MONGODB_URI;
 
 async function connection (){
     await mongoose.connect(
-        process.env.MONGODB_URI || 'mongodb://localhost/immense-beach-71384',
+        process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
         {
           useNewUrlParser: true,
           useUnifiedTopology: true,
