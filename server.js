@@ -20,12 +20,13 @@ app.use(express.static("public"));
 
 //checking for environment variable that we added to HEROKU -> in the Mongo Atlas, we created a URL linked to this connection
 //In Heroku, use the connection string we gave it. Use the deployed environmental variable we set in Heroku
- mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutTrackerDB",{
- //these booleans set specific connections in Mongo  
- useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false
+  }
+);
 
 //these are routes we can access on our application
 require("./routes/apiRoutes") (app);
